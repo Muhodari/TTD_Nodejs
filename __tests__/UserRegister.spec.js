@@ -1,16 +1,31 @@
-const request = require('supertest');
-const app = require('../app');
+const request = require("supertest");
+const app = require("../app");
 
-it('returns 200 OK when signup request is valid', (done) => {
+it("returns 200 OK when signup request is valid", (done) => {
   request(app)
-    .post('/api/1.0/users')
+    .post("/api/1.0/users")
     .send({
-      username: 'user1',
-      email: 'user1@mail.com',
-      password: 'P4ssword',
+      username: "user1",
+      email: "user1@mail.com",
+      password: "P4ssword",
     })
     .then((response) => {
       expect(response.status).toBe(200);
+      done();
+    });
+  // .expect(200, done);
+});
+
+it("returns success message when signup request is valid", (done) => {
+  request(app)
+    .post("/api/1.0/users")
+    .send({
+      username: "user1",
+      email: "user1@mail.com",
+      password: "P4ssword",
+    })
+    .then((response) => {
+      expect(response.body.message).toBe("user created successfully");
       done();
     });
   // .expect(200, done);
