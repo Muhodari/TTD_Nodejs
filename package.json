@@ -4,8 +4,9 @@
   "description": "ttd with express",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "jest --watch"
+    "start": "nodemon index.js",
+    "test": "jest --watch",
+    "lint": "eslint ."
   },
   "author": "Muhodari sage",
   "license": "ISC",
@@ -36,11 +37,15 @@
       "es6": true,
       "jest": true
     },
-    "rules": {}
+    "rules": {
+      "eqeqeq":"warn",
+      "prettier/prettier":"warn"
+    }
   },
-  
+
   "prettier":{
-    "singleQuote": true
+    "singleQuote": true,
+    "printWidth": 120
     
   }
 
