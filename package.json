@@ -11,7 +11,9 @@
   "author": "Muhodari sage",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "sequelize": "^6.13.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
@@ -28,7 +30,7 @@
     "extends": [
       "eslint:recommended",
       "plugin:prettier/recommended"
-    ], 
+    ],
     "plugins": [
       "prettier"
     ],
@@ -38,15 +40,12 @@
       "jest": true
     },
     "rules": {
-      "eqeqeq":"warn",
-      "prettier/prettier":"warn"
+      "eqeqeq": "warn",
+      "prettier/prettier": "warn"
     }
   },
-
-  "prettier":{
+  "prettier": {
     "singleQuote": true,
     "printWidth": 120
-    
   }
-
 }

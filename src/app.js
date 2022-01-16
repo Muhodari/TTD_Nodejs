@@ -1,12 +1,13 @@
-const express = require("express");
-
+const express = require('express');
+const User = require('./User/User');
 
 const app = express();
 
-
-app.post("/api/1.0/users", (req, res) => {
-  return res.send({
-    message: "user created successfully",
+app.post('/api/1.0/users', (req, res) => {
+  User.create(req.body).then(() => {
+    return res.send({
+      message: 'user created successfully',
+    });
   });
 });
 
