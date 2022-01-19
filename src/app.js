@@ -13,13 +13,15 @@ app.post('/api/1.0/users', (req, res) => {
   });
 });
 
+
 app.get('/api/1.0/users', (req, res) => {
   User.findAll()
     .then((users) => {
-      return res.status(200).json({ users: users });
+      return res.status(200).send({ users: users });
     })
     .catch((error) => {
       console.log(error);
     });
 });
+
 module.exports = app;
